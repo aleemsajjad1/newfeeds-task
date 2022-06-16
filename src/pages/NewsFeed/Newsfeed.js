@@ -29,10 +29,16 @@ const Newsfeed = () => {
         setPosts(clonePosts);
     }
 
+    const onPostComment = (postIndex, likePayload) => {
+        const clonePosts = [...posts];
+        clonePosts[postIndex].comments = [...clonePosts[postIndex].comments, likePayload];
+        setPosts(clonePosts);
+    }
+
     return (
         <div className='p-4'>
             <div className='d-flex justify-content-center pt-5 mt-5'>
-                <div style={{ width: "50%" }}>
+                <div className='card_width'>
                     <div className='news_feed_card'>
                         <form onSubmit={onSavePost}>
                             <div className='d-flex pb-5 mb-4 p-3'>
@@ -59,7 +65,7 @@ const Newsfeed = () => {
                 </div>
             </div>
             {
-                posts.map((post, i) => <PostCompoment likePost={onPostLike} post={post} postKey={i} key={i} />)
+                posts.map((post, i) => <PostCompoment commentPost={onPostComment} likePost={onPostLike} post={post} postKey={i} key={i} />)
             }
 
         </div>

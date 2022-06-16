@@ -4,6 +4,7 @@ import likeIco from '../assets/Like.png';
 import comment from '../assets/Comment.png';
 import Comments from '../components/comments';
 import InitStates from "../constants/initStates";
+import moment from 'moment';
 import "./Style.css";
 
 
@@ -22,7 +23,6 @@ const PostCompoment = (porps) => {
 
     const onLikePost = () => {
         if (post.likes.length) return;
-
         const likePayload = {
             username: "Aleem",
             createdAt: new Date().toISOString()
@@ -30,10 +30,20 @@ const PostCompoment = (porps) => {
         porps.likePost(porps.postKey, likePayload)
     }
 
+    const onCommentPost = (title) => {
+        const likePayload = {
+            username: "John",
+            proffession: "Software Developer",
+            title,
+            createdAt: new Date().toISOString()
+        }
+        porps.commentPost(porps.postKey, likePayload)
+    }
+
     return (
         <div>
             <div className='d-flex justify-content-center pt-5 mt-5 mb-5'>
-                <div className='w-50'>
+                <div className='card_width'>
                     <div className='news_feed_card'>
                         <div className='d-flex p-3'>
                             <div className='pt-3 news_feed_card_top'>
@@ -42,7 +52,7 @@ const PostCompoment = (porps) => {
                             <div className='pl-3'>
                                 <p className='mb-0 user_name'>{post.username}</p>
                                 <p className='mb-0 location' >{post.location}</p>
-                                <p className='mb-0 time'>{post.createdAt}</p>
+                                <p className='mb-0 time'>{moment(post.createdAt).fromNow()}</p>
                             </div>
                         </div>
                         <div className='p-3 pt-0 pb-0'>
@@ -57,7 +67,7 @@ const PostCompoment = (porps) => {
                                 <div className='comment_btn' onClick={showComment} ><img src={comment} /> Comment</div>
                             </div>
                             {
-                                showUserComment && <Comments commentList={post.comments} />
+                                showUserComment && <Comments commentPost={onCommentPost} commentList={post.comments} />
                             }
                         </div>
                     </div>

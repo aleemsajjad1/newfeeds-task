@@ -5,6 +5,8 @@ import deleteIco from '../assets/Deletes.png';
 import editIco from '../assets/Edit.png';
 import InitStates from "../constants/initStates";
 import "./Style.css";
+import moment from 'moment';
+
 
 const Comment = ({ comment }) => {
 
@@ -16,7 +18,7 @@ const Comment = ({ comment }) => {
             <div className='comment_box'>
                 <div className='d-flex justify-content-between' >
                     <p className='mb-0 comment_Uname'> {comment.username} </p>
-                    <p className='mb-0 comment_time'> {comment.createdAt} </p>
+                    <p className='mb-0 comment_time'> {moment(comment.createdAt).fromNow()} </p>
                 </div>
                 <div>
                     <p className='mb-0 comment_prof'> {comment.proffession}</p>
@@ -41,11 +43,13 @@ const PostCompoment = (props) => {
         setComment({ ...comment, title: e.target.value, createdAt: new Date().toISOString() })
     }
 
+    useEffect(() => {
+        setComments(props.commentList)
+    }, [props.commentList])
+
     const onEnterPress = (e) => {
         e.preventDefault();
-        const cloneComment = [...comments];
-        cloneComment.push(comment);
-        setComments(cloneComment);
+        props.commentPost(comment.title);
         setComment(InitStates.initComment)
     }
 

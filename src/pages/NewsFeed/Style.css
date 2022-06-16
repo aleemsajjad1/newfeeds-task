@@ -29,3 +29,11 @@
   width: 150px;
   text-align: center;
 }
+.card_width {
+  width: 50%;
+}
+@media screen and (max-width: 800px) {
+  .card_width {
+    width: 100%;
+  }
+}
