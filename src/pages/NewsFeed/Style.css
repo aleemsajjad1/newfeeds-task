@@ -1,0 +1,31 @@
+.news_feed_card {
+  border-radius: 8px;
+  background-color: #fff;
+}
+.news_feed_card_top {
+  margin-right: 20px;
+  width: 80px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: #d8e1ea;
+  text-align: center;
+}
+.input_div {
+  width: 100%;
+  padding-top: 15px;
+}
+.input_text {
+  width: 100%;
+  font-size: 20px;
+  border: none;
+  outline: none;
+}
+.upload_image_btn {
+  background-color: #000;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 15px;
+  padding: 8px;
+  width: 150px;
+  text-align: center;
+}

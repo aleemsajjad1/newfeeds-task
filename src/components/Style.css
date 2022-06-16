@@ -1,0 +1,100 @@
+.news_feed_card {
+  border-radius: 8px;
+  background-color: #fff;
+}
+.news_feed_card_top {
+  margin-right: 20px;
+  width: 80px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: #d8e1ea;
+  text-align: center;
+}
+.input_text {
+  width: 100%;
+  font-size: 20px;
+  border: none;
+  outline: none;
+}
+
+.user_img_comment {
+  margin-right: 20px;
+  width: 70px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: #d8e1ea;
+  text-align: center;
+}
+.comment_section {
+  width: 100%;
+}
+.comment_input {
+  width: 100%;
+  padding: 12px;
+  border: "1px solid gray";
+  border-radius: 30px;
+}
+.comment_box {
+  background-color: #d5e1ea;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+}
+.user_name {
+  font-size: 20px;
+  font-weight: bold;
+}
+.location {
+  color: skyblue;
+  font-size: 18px;
+  font-weight: bold;
+}
+.time {
+  font-size: 16px;
+  color: gray;
+}
+.title {
+  font-size: 20px;
+}
+.like_comment {
+  color: gray;
+}
+.comment_cmp {
+  background-color: #f7f7f7;
+  border-top: "1px solid #DBDBDB";
+}
+.like_btn {
+  cursor: pointer;
+}
+.comment_btn {
+  padding-left: 12px;
+  cursor: pointer;
+}
+.comment_Uname {
+  font-size: 18px;
+  font-weight: bold;
+}
+.comment_time {
+  font-size: 16px;
+  color: gray;
+}
+.comment_prof {
+  font-size: 18px;
+  color: skyblue;
+  font-weight: bold;
+}
+.comment_title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.comment_mesg_like {
+  font-size: 16px;
+  color: gray;
+  font-weight: bold;
+}
+.feedback_ico {
+  font-size: 16px;
+  color: gray;
+  font-weight: bold;
+  padding-left: 10px;
+}
